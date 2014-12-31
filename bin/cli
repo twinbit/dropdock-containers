@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-fig run --rm cli
+cd ##CWD## && fig run --rm cli
