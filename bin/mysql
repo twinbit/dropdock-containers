@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cd ##CWD## && fig run --rm cli mysql -udocker -pdocker -hmysql
+cd $(PWD) && fig run --rm cli mysql -udocker -pdocker -hmysql

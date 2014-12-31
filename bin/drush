@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cd ##CWD## && fig run --rm cli drush "${@}"
+cd $(PWD) && fig run --rm cli drush "${@}"
