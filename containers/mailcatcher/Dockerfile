@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     libsqlite3-dev \
     ruby \
-    ruby-dev
+    ruby-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN gem install mailcatcher --version 0.5.12 --no-rdoc --no-ri
 

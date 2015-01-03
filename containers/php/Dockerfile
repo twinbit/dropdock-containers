@@ -1,12 +1,8 @@
-FROM ubuntu:14.04
+    FROM ubuntu:14.04
 MAINTAINER Paolo Mainardi <paolo@twinbit.it>
 ENV REFRESHED_AT 2014-11-24
 
 ENV DEBIAN_FRONTEND noninteractive
-
-# Configure default system.
-RUN apt-get update && \
-    apt-get -y dist-upgrade
 
 # Set timezone and locale.
 RUN locale-gen en_US.UTF-8
@@ -20,9 +16,9 @@ ENV LC_ALL en_US.UTF-8
 #    apt-get update
 
 # PHP Packages.
-RUN apt-get -y install php5 php5-fpm php5-gd php5-ldap \
+RUN apt-get update && apt-get -y install php5 php5-fpm php5-gd php5-ldap \
     php5-sqlite php5-pgsql php-pear php5-mysql php5-curl \
-    php5-mcrypt php5-xcache php5-xmlrpc php5-intl php5-xdebug \
+    php5-mcrypt php5-xmlrpc php5-intl php5-xdebug \
     build-essential \
     libsqlite3-dev \
     ruby \
@@ -43,6 +39,7 @@ listen = 0.0.0.0:9000' /etc/php5/fpm/pool.d/www.conf && \
 COPY conf/conf.d/opcache.ini /etc/php5/fpm/conf.d/opcache.ini
 COPY conf/conf.d/docker.ini /etc/php5/fpm/conf.d/docker.ini
 COPY conf/php-fpm.conf /etc/php5/fpm/pool.d/www.conf
+COPY conf/conf.d/xdebug.ini /etc/php5/mods-available/xdebug.ini
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
