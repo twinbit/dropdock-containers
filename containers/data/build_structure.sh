@@ -9,4 +9,3 @@ mkdir -p /data/var/log/nginx && \
 mkdir -p /data/var/log/mysql && \
 mkdir -p /data/var/log/php && \
 mkdir -p /data/var/lib/mysql
-exec $@
