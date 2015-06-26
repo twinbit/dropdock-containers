@@ -1,7 +1,5 @@
 # Dropdock containers
 
-![Dropdock](https://raw.githubusercontent.com/twinbit/drocker/gh-pages/img/logo.png)
-
 An automated build for these containers is available on the [Docker Hub](https://registry.hub.docker.com/u/twinbit).
 
 This repository is used to develop drocker containers, than they are used to automatically updates specific container repositories, in order to get automatically built by docker registry:
