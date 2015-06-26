@@ -14,7 +14,7 @@ class RoboFile extends \Robo\Tasks
      */
     public function containersBuild()
     {
-      $this->yell("Drupal Docker build containers.");
+      $this->yell("Drupal Dropdock build containers.");
       $standard_readme = file_get_contents('README.default.md');
       $finder = new Finder();
       $finder->directories()->in(__DIR__ . "/containers");
