@@ -309,10 +309,8 @@
          faster and more near-realtime friendly than a hard commit.
     -->
     <autoSoftCommit>
-      <maxDocs>${solr.autoSoftCommit.MaxDocs:2000}</maxDocs>
-      <maxTime>${solr.autoSoftCommit.MaxTime:10000}</maxTime>
+       <maxTime>${solr.autoSoftCommit.maxTime:1}</maxTime>
     </autoSoftCommit>
-
     <!-- Update Related Event Listeners
 
          Various IndexWriter related events can trigger Listeners to
