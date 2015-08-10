@@ -26,6 +26,10 @@ class RoboFile extends \Robo\Tasks
         if (file_exists($container_dest)) {
           $container_readme = "{$container_dest}/README.md";
           $this->printTaskInfo('Syncing container:' . $container_name);
+          $this->taskDeleteDir([$container_dest])->run();
+          $this->taskExec("git clone git@github.com:twinbit/docker-drupal-{$container_name}")
+               ->dir(realpath('github-repos'))
+               ->run();
           $this->taskCleanDir([$container_dest])->run();
           $this->taskCopyDir([$container_source_path => $container_dest])->run();
           // Update README files.
